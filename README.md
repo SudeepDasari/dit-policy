@@ -1,5 +1,5 @@
 # The Ingredients for Robotic Diffusion Transformers
-[DiT-Policy](https://dit-policy.github.io)
+[DiT-Policy](https://dit-policy.github.io) (forked from: [data4robotics](https://github.com/SudeepDasari/data4robotics))
 
 This repository offers an implementation of our improved Diffusion Transformer Policy, which achieved State-of-the-Art manipulation results on bi-manual ALOHA robots and single-arm DROID Franka robots. This repo also allows easy use of our advanced pre-trained representations from [prior](https://data4robotics.github.io) [work](https://hrp-robot.github.io). We've succesfully deployed policies from this code on Franka robots (w/ [DROID](https://github.com/droid-dataset/droid/tree/main) and [MaNiMo](https://github.com/AGI-Labs/manimo)), [ALOHA](https://tonyzhaozh.github.io/aloha/) robots, and on [LEAP hands](https://www.leaphand.com). Check out our [eval scripts](eval_scripts/README.md) for more information. These policies can also be tested in simulation (see [Sim README](https://github.com/SudeepDasari/data4robotics/tree/dit_release/data4robotics/sim)).
 
