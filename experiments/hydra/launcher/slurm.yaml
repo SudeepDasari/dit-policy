@@ -1,0 +1,17 @@
+# Copyright (c) Sudeep Dasari, 2023
+
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+
+defaults:
+  - submitit_slurm
+
+timeout_min: 360
+partition: default
+tasks_per_node: ${devices}
+gpus_per_node: ${devices}
+cpus_per_task: ${num_workers}
+mem_gb: ${mult:${devices},124}
+nodes: 1
+max_num_timeout: 100

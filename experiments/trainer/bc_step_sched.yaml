@@ -1,0 +1,21 @@
+# Copyright (c) Sudeep Dasari, 2023
+
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+
+_target_: data4robotics.trainers.bc.BehaviorCloning
+
+optim_builder:
+  _target_: data4robotics.trainers.utils.optim_builder
+  optimizer_type: Adam
+  optimizer_kwargs:
+    lr: ${lr}
+    weight_decay: 0.0001
+
+schedule_builder:
+  _target_: data4robotics.trainers.utils.schedule_builder
+  schedule_type: 'StepLR'
+  schedule_kwargs:
+    step_size: 1
+    gamma: 0.99997

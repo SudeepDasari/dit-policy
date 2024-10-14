@@ -1,0 +1,24 @@
+# Copyright (c) Sudeep Dasari, 2023
+
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+
+_target_: data4robotics.trainers.bc.BehaviorCloning
+
+optim_builder:
+  _target_: data4robotics.trainers.utils.optim_builder
+  optimizer_type: AdamW
+  optimizer_kwargs:
+    lr: ${lr}
+    betas: [0.95, 0.999]
+    weight_decay: 1.0e-6
+    eps: 1.0e-8
+
+schedule_builder:
+  _target_: data4robotics.trainers.utils.schedule_builder
+  schedule_type: 'cosine'
+  from_diffusers: True
+  schedule_kwargs:
+    num_warmup_steps: 2000
+    num_training_steps: ${max_iterations}

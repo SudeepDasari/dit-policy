@@ -1,0 +1,11 @@
+# Copyright (c) Sudeep Dasari, 2023
+
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+
+_target_: data4robotics.models.action_distributions.GaussianMixture
+in_dim: ${index:${agent.shared_mlp}, -1}
+ac_dim: ${task.ac_dim}
+ac_chunk: ${ac_chunk}
+num_modes: 5

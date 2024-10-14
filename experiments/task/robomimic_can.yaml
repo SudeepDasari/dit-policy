@@ -1,0 +1,22 @@
+# Copyright (c) Sudeep Dasari, 2023
+
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+
+_target_: data4robotics.sim.robosuite.RoboSuiteTask
+obs_dim: 11
+ac_dim: 7
+n_cams: 1
+task: can
+test_transform: ${transform:preproc}
+
+train_buffer:
+  _target_: data4robotics.sim.robosuite.RoboSuiteBuffer
+  task: ${task.task}
+  transform: ${transform:${train_transform}}
+  n_train_demos: 200
+  ac_chunk: ${ac_chunk}
+  cam_indexes: [0]
+  goal_indexes: []
+  past_frames: ${add:${img_chunk},-1}

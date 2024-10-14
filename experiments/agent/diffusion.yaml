@@ -1,0 +1,32 @@
+# Copyright (c) Sudeep Dasari, 2023
+
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+
+defaults:
+  - features: resnet_gn_nopool
+  - _self_
+
+_target_: data4robotics.models.diffusion.DiffusionTransformerAgent
+odim: ${task.obs_dim}
+n_cams: ${task.n_cams}
+use_obs: add_token
+dropout: 0.1
+train_diffusion_steps: 100
+eval_diffusion_steps: 8
+ac_dim: ${task.ac_dim}
+ac_chunk: ${ac_chunk}
+imgs_per_cam: ${add:${img_chunk},${len:${task.train_buffer.goal_indexes}}}
+share_cam_features: False
+early_fusion: False
+feat_norm: null
+
+noise_net_kwargs:
+  time_dim: 256
+  hidden_dim: 512
+  num_blocks: 6
+  dim_feedforward: 2048
+  dropout: ${agent.dropout}
+  nhead: 8
+  activation: "gelu"

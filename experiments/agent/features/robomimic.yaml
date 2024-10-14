@@ -1,0 +1,13 @@
+# Copyright (c) Sudeep Dasari, 2023
+
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+
+_target_: data4robotics.models.resnet.RobomimicResNet
+size: 18
+weights: 'IMAGENET1K_V1'   # for torchvision weight restore
+norm_cfg:
+  name: diffusion_policy
+img_size: 224
+feature_dim: 64

@@ -1,0 +1,8 @@
+*.jpg
+*.gif
+*.mp4
+*.png
+__pycache__/
+bc_finetune/
+visual_features/
+*.egg-info/

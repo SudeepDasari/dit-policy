@@ -1,0 +1,47 @@
+# Copyright (c) Sudeep Dasari, 2023
+
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+
+defaults:
+  - agent: default
+  - task: end_effector
+  - trainer: bc
+  - override hydra/launcher: slurm
+  - _self_
+
+
+hydra:
+  run:
+    dir: bc_finetune/${exp_name}/wandb_${wandb.name}_${hydra:runtime.choices.task}_${hydra:runtime.choices.agent/features}_${now:%Y-%m-%d_%H-%M-%S}
+  sweep:
+    dir: ${base:}/../bc_finetune/${exp_name}/${now:%Y-%m-%d_%H-%M-%S}
+    subdir: run${hydra:job.num}_${hydra:runtime.choices.task}_${hydra:runtime.choices.agent/features}
+
+rt: ${hydra:runtime.choices.agent/features}
+
+exp_name: test
+checkpoint_path: ${exp_name}.ckpt
+batch_size: 150
+num_workers: 10
+lr: 0.0003
+max_iterations: 150000
+eval_freq: 10000
+save_freq: 10000
+schedule_freq: 1
+devices: 1
+seed: 292285
+
+buffer_path: ./buffer.pkl
+ac_chunk: 1
+img_chunk: 1  # number of image timesteps to use (including current one)
+train_transform: medium
+
+wandb:
+  name: null
+  project: human_aloha
+  group: ${exp_name}
+  sweep_name_prefix: eval
+  debug: False
+  entity: cmu-agi-lab

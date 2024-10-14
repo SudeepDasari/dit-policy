@@ -1,0 +1,15 @@
+# Copyright (c) Sudeep Dasari, 2023
+
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+
+_target_: data4robotics.models.resnet.ResNet
+size: 18
+weights: 'IMAGENET1K_V1'   # for torchvision weight restore
+restore_path: ''           # for restoring our custom weights
+avg_pool: False            # return all final image tokens
+conv_repeat: ${mult:${agent.early_fusion},${agent.imgs_per_cam}}
+norm_cfg:
+  name: group_norm
+  num_groups: 16

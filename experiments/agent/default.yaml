@@ -1,0 +1,21 @@
+# Copyright (c) Sudeep Dasari, 2023
+
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+
+defaults:
+  - features: vit_base
+  - policy: gaussian_mixture
+  - _self_
+
+_target_: data4robotics.agent.MLPAgent
+shared_mlp: [512,512]
+odim: ${task.obs_dim}
+n_cams: ${task.n_cams}
+use_obs: add_token
+dropout: 0.2
+imgs_per_cam: ${add:${img_chunk},${len:${task.train_buffer.goal_indexes}}}
+share_cam_features: False
+early_fusion: False
+feat_norm: batch_norm
