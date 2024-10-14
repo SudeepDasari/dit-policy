@@ -1,36 +1,15 @@
 # The Ingredients for Robotic Diffusion Transformers
-[DiT-Policy](https://dit-policy.github.io) (forked from: [data4robotics](https://github.com/SudeepDasari/data4robotics))
+[![arXiv](https://img.shields.io/badge/arXiv-foo-df2a2a.svg)](https://arxiv.org/pdf/foo)
+[![Python](https://img.shields.io/badge/python-3.10-blue)](https://www.python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Static Badge](https://img.shields.io/badge/Project-Page-a)](https://dit-policy.github.io/)
 
-This repository offers an implementation of our improved Diffusion Transformer Policy, which achieved State-of-the-Art manipulation results on bi-manual ALOHA robots and single-arm DROID Franka robots. This repo also allows easy use of our advanced pre-trained representations from [prior](https://data4robotics.github.io) [work](https://hrp-robot.github.io). We've succesfully deployed policies from this code on Franka robots (w/ [DROID](https://github.com/droid-dataset/droid/tree/main) and [MaNiMo](https://github.com/AGI-Labs/manimo)), [ALOHA](https://tonyzhaozh.github.io/aloha/) robots, and on [LEAP hands](https://www.leaphand.com). Check out our [eval scripts](eval_scripts/README.md) for more information. These policies can also be tested in simulation (see [Sim README](https://github.com/SudeepDasari/data4robotics/tree/dit_release/data4robotics/sim)).
+[Sudeep Dasari](https://sudeepdasari.github.io/), [Oier Mees](https://www.oiermees.com/),  [Sebastian Zhao](http://linkedin.com/in/sebbyzhao/), [Mohan Kumar Srirama](https://scholar.google.com/citations?user=Yu18Q6MAAAAJ&hl=en/), [Sergey Levine](https://people.eecs.berkeley.edu/~svlevine/)
+<hr style="border: 2px solid gray;"></hr>
 
-If you find the this codebase or the diffusion transformer useful at all, please cite:
-```
-@inproceedings{dasari2024ditpi,
-    title={The Ingredients for Robotic Diffusion Transformers},
-    author = {Sudeep Dasari and Oier Mees and Sebastian Zhao and Mohan Kumar Srirama and Sergey Levine},
-    booktitle = {arXiv e-prints},
-    year={2024},
-}
-```
+This repository offers an implementation of our improved Diffusion Transformer Policy (DiT-Block Policy), which achieves state-of-the-art manipulation results on long horizon bi-manual ALOHA robots and single-arm DROID Franka robots. This repo also allows easy use of our advanced pre-trained representations from [prior](https://data4robotics.github.io) [work](https://hrp-robot.github.io). We've succesfully deployed policies from this code on Franka robots (w/ [DROID](https://github.com/droid-dataset/droid/tree/main) and [MaNiMo](https://github.com/AGI-Labs/manimo)), [ALOHA](https://tonyzhaozh.github.io/aloha/) robots, and on [LEAP hands](https://www.leaphand.com). Check out our [eval scripts](eval_scripts/README.md) for more information. These policies can also be tested in simulation (see [Sim README](https://github.com/SudeepDasari/data4robotics/tree/dit_release/data4robotics/sim)).
 
-And if you use the representations, please cite:
-```
-@inproceedings{dasari2023datasets,
-      title={An Unbiased Look at Datasets for Visuo-Motor Pre-Training},
-      author={Dasari, Sudeep and Srirama, Mohan Kumar and Jain, Unnat and Gupta, Abhinav},
-      booktitle={Conference on Robot Learning},
-      year={2023},
-      organization={PMLR}
-}
-
-@inproceedings{kumar2024hrp,
-    title={HRP: Human Affordances for Robotic Pre-Training},
-    author = {Mohan Kumar Srirama and Sudeep Dasari and Shikhar Bahl and Abhinav Gupta},
-    booktitle = {Proceedings of Robotics: Science and Systems},
-    address  = {Delft, Netherlands},
-    year = {2024},
-}
-```
+![](media/aloha_teaser.png)
 
 ## Installation
 Our repository is easy to install using miniconda or anaconda:
@@ -86,6 +65,7 @@ This will result in a policy checkpoint saved in the `bc_finetune/<exp_name>` fo
 
 ## Downloading the Bi-Play Dataset
 We also provide an open-sourced dataset, named BiPlay, with over 7000 diverse, text-annotated, bi-manual expert demonstrations collected on an ALOHA robot. You may download the dataset from the following [gcloud bucket](https://console.cloud.google.com/storage/browser/aloha_play_dataset_public;tab=objects?forceOnBucketsSortingFiltering=true&authuser=2&project=rail-tpus&prefix=&forceOnObjectsSortingFiltering=false). It can be loaded out of the box with the dataloader from [Octo](https://octo-models.github.io).
+![](media/aloha_dataset.png)
 
 ## Using Pre-Trained Features
 You can easily download our pre-trained represenations using the provided script: `./download_features.sh`. You may also download the features individually on our [release website](https://www.cs.cmu.edu/~data4robotics/release/).
@@ -95,3 +75,33 @@ The features are very modular, and easy to use in your own code-base! Please ref
 ## Policy Deployment (Sim and Real)
 
 Detailed instructions and eval scripts for real world deployment are provided [here](https://github.com/SudeepDasari/data4robotics/tree/dit_release/eval_scripts). Similarly, you can reproduce our sim results, using the command/code provided [here](https://github.com/SudeepDasari/data4robotics/tree/dit_release/data4robotics/sim).
+
+## Citations
+If you find this codebase or the diffusion transformer useful, please cite:
+```
+@inproceedings{dasari2024ditpi,
+    title={The Ingredients for Robotic Diffusion Transformers},
+    author = {Sudeep Dasari and Oier Mees and Sebastian Zhao and Mohan Kumar Srirama and Sergey Levine},
+    booktitle = {arXiv e-prints},
+    year={2024},
+}
+```
+
+And if you use the representations, please cite:
+```
+@inproceedings{dasari2023datasets,
+      title={An Unbiased Look at Datasets for Visuo-Motor Pre-Training},
+      author={Dasari, Sudeep and Srirama, Mohan Kumar and Jain, Unnat and Gupta, Abhinav},
+      booktitle={Conference on Robot Learning},
+      year={2023},
+      organization={PMLR}
+}
+
+@inproceedings{kumar2024hrp,
+    title={HRP: Human Affordances for Robotic Pre-Training},
+    author = {Mohan Kumar Srirama and Sudeep Dasari and Shikhar Bahl and Abhinav Gupta},
+    booktitle = {Proceedings of Robotics: Science and Systems},
+    address  = {Delft, Netherlands},
+    year = {2024},
+}
+```
