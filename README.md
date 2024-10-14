@@ -65,7 +65,10 @@ This will result in a policy checkpoint saved in the `bc_finetune/<exp_name>` fo
 
 ## Downloading the Bi-Play Dataset
 We also provide an open-sourced dataset, named BiPlay, with over 7000 diverse, text-annotated, bi-manual expert demonstrations collected on an ALOHA robot. You may download the dataset from the following [gcloud bucket](https://console.cloud.google.com/storage/browser/aloha_play_dataset_public;tab=objects?forceOnBucketsSortingFiltering=true&authuser=2&project=rail-tpus&prefix=&forceOnObjectsSortingFiltering=false). It can be loaded out of the box with the dataloader from [Octo](https://octo-models.github.io).
-![](media/aloha_dataset.png)
+
+<div style="text-align: center;">
+<img src="media/aloha_dataset.png" alt="Aloha Dataset" width="300"/>
+</div>
 
 ## Using Pre-Trained Features
 You can easily download our pre-trained represenations using the provided script: `./download_features.sh`. You may also download the features individually on our [release website](https://www.cs.cmu.edu/~data4robotics/release/).
