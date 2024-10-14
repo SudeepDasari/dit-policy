@@ -1,6 +1,6 @@
 # The Ingredients for Robotic Diffusion Transformers
 [![arXiv](https://img.shields.io/badge/arXiv-foo-df2a2a.svg)](https://arxiv.org/pdf/foo)
-[![Python](https://img.shields.io/badge/python-3.10-blue)](https://www.python.org)
+[![Python](https://img.shields.io/badge/python-3.9-blue)](https://www.python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Static Badge](https://img.shields.io/badge/Project-Page-a)](https://dit-policy.github.io/)
 
