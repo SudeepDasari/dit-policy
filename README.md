@@ -1,5 +1,6 @@
 # The Ingredients for Robotic Diffusion Transformers
 [![arXiv](https://img.shields.io/badge/arXiv-2410.10088-df2a2a.svg)](https://arxiv.org/pdf/2410.10088)
+[![HF Dataset](https://img.shields.io/badge/%F0%9F%A4%97-Dataset-yellow)](https://huggingface.co/datasets/oier-mees/BiPlay)
 [![Python](https://img.shields.io/badge/python-3.9-blue)](https://www.python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Static Badge](https://img.shields.io/badge/Project-Page-a)](https://dit-policy.github.io/)
@@ -64,7 +65,7 @@ python finetune.py exp_name=test agent=diffusion_unet task=end_effector_r6 agent
 This will result in a policy checkpoint saved in the `bc_finetune/<exp_name>` folder.
 
 ## Downloading the Bi-Play Dataset
-We also provide an open-sourced dataset, named BiPlay, with over 7000 diverse, text-annotated, bi-manual expert demonstrations collected on an ALOHA robot. You may download the dataset from the following [gcloud bucket](https://console.cloud.google.com/storage/browser/aloha_play_dataset_public;tab=objects?forceOnBucketsSortingFiltering=true&authuser=2&project=rail-tpus&prefix=&forceOnObjectsSortingFiltering=false). It can be loaded out of the box with the dataloader from [Octo](https://octo-models.github.io).
+We also provide an open-sourced dataset, named BiPlay, with over 7000 diverse, text-annotated, bi-manual expert demonstrations collected on an ALOHA robot. You may download the dataset from the following [HuggingFace dataset](https://huggingface.co/datasets/oier-mees/BiPlay). It can be loaded out of the box with the dataloader from [Octo](https://octo-models.github.io).
 
 <p align="center">
 <img src="media/aloha_dataset.png" alt="Aloha Dataset" width="400"/>
