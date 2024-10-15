@@ -1,5 +1,5 @@
 # The Ingredients for Robotic Diffusion Transformers
-[![arXiv](https://img.shields.io/badge/arXiv-foo-df2a2a.svg)](https://arxiv.org/pdf/foo)
+[![arXiv](https://img.shields.io/badge/arXiv-2410.10088-df2a2a.svg)](https://arxiv.org/pdf/2410.10088)
 [![Python](https://img.shields.io/badge/python-3.9-blue)](https://www.python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Static Badge](https://img.shields.io/badge/Project-Page-a)](https://dit-policy.github.io/)
@@ -83,10 +83,10 @@ Detailed instructions and eval scripts for real world deployment are provided [h
 ## Citations
 If you find this codebase or the diffusion transformer useful, please cite:
 ```
-@inproceedings{dasari2024ditpi,
+@article{dasari2024ditpi,
     title={The Ingredients for Robotic Diffusion Transformers},
     author = {Sudeep Dasari and Oier Mees and Sebastian Zhao and Mohan Kumar Srirama and Sergey Levine},
-    booktitle = {arXiv e-prints},
+    journal = {arXiv preprint arXiv:2410.10088},
     year={2024},
 }
 ```
